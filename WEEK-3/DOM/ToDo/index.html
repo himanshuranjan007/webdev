@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO APP</title>
+    <style>
+   body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #282c34; /* Dark blue background */
+}
+
+.container {
+  background-color: #20232a; /* Slightly darker blue for container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  color: white; /* Text color */
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #33373b; /* Lighter dark blue for input */
+  color: white; /* Text color */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green button */
+  color: white; /* Text color */
+  cursor: pointer;
+}
+
+.todo-list {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  background-color: #33373b; /* Lighter dark blue for to-do items */
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-text {
+  flex-grow: 1;
+  color: white; /* Text color */
+}
+
+.delete-button {
+  background-color: #f44336; /* Red button for delete */
+  color: white; /* Text color */
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.app-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <div class="container">
+      <div class="app-title" ><h2 style="color: aqua;">MY TO-DO APP</h2></div>
+      
+      <div class="input-container">
+        <input type="text" id="todoInput">
+        <button id="addButton">ADD ToDo</button>
+      </div>
+      <ul class="todo-list" id="todoList"></ul>
+    </div>
+    
+  </body>
+  <script>
+    const todoInput = document.getElementById('todoInput')
+    const addButton = document.getElementById('addButton')
+    const todoList = document.getElementById('todoList')
+
+
+
+    addButton.addEventListener('click', function(e){
+        const todoText = todoInput.value;
+        if (todoText){
+            const li = document.createElement('li')
+            li.classList.add('todo-item')
+            li.innerHTML = `<span class="todo-Text">${todoText}</span> <button class="delete-button">Delete</button>`
+            todoList.appendChild(li)
+            todoInput.value=""
+        }
+        
+
+    });
+
+    todoList.addEventListener('click',(event)=>{
+        if (event.target.classList.contains('delete-button')){
+            event.target.closest('li').remove()
+        }
+    })
+   
+
+//     todoList.addEventListener('click', (event) => {
+//   if (event.target.classList.contains('delete-button')) {
+//     event.target.closest('li').remove();
+//   }
+// });
+
+
+// FUCK THIS WAS HARD .......
+
+
+
+
+  </script>
+</html>
