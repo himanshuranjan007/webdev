@@ -1,7 +1,7 @@
 const mongoose =require('mongoose')
 const ObjectId = mongoose.ObjectId
 
-mongoose.connect('mongodb+srv://hr731977:uQC3UZTgJwSeka54@cluster0.vu9hy.mongodb.net/todo-app-test')
+mongoose.connect('mongodb+srv://hr731977:uQC3UZTgJwSeka54@cluster0.vu9hy.mongodb.net/todo-app-week-7-2')
 
 // initializze the schema
 const Schema =mongoose.Schema
